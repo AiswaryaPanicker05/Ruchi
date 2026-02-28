@@ -1,32 +1,34 @@
-Ruchi 🎯
+# Ruchi 🎯
 
-Team Name: BuildX
+## Basic Details
 
-Team Members:
+### Team Name: BuildX
 
-Member 1: Aiswarya Panicker – Vidya Academy of Science & Technology
+### Team Members:
 
-Member 2: Aryanandha P P – Vidya Academy of Science & Technology
+Member 1: Aiswarya Panicker – Vidya Academy of Science & Technology,thrissur
 
-Hosted Project Link: https://silver-souffle-12e0e6.netlify.app/home.html
+Member 2: Aryanandha P P – Vidya Academy of Science & Technology,thrissur
 
-Project Description
+### Hosted Project Link: https://silver-souffle-12e0e6.netlify.app/home.html
+
+### Project Description
 
 Ruchi helps users discover recipes based on the ingredients they already have at home. Users can also make use of leftovers, pantry staples, and student survival kits to prepare quick, nutritious meals, reducing food wastage.
 
-The Problem Statement
+### The Problem Statement
 
 Many people struggle to decide what to cook with available ingredients, often resulting in food wastage or unhealthy takeout. Leftovers and pantry items are frequently ignored, and students or busy individuals find it challenging to plan quick, nutritious meals.
 
-The Solution
+### The Solution
 
 Our project solves this problem by letting users input available ingredients, including leftovers and pantry items. Based on these inputs, Ruchi suggests recipes that can be prepared immediately. This makes meal planning simple, reduces food waste, and helps students and busy individuals cook efficiently.
 
-Technical Details :
+## Technical Details :
 
-Technologies/Components Used
+### Technologies/Components Used
 
-For Software:
+#### For Software:
 
 Languages used: HTML, CSS, JavaScript
 
@@ -36,11 +38,11 @@ Libraries used: Font Awesome (icons)
 
 Tools used: VS Code, Git
 
-For Hardware:
+#### For Hardware:
 
 Not applicable
 
-Features
+### Features
 
 Ingredient-based Recipe Suggestion: Enter ingredients to get matching recipes.
 
@@ -50,9 +52,9 @@ Student Survival Kit: Quick, easy, and nutritious meal options for students.
 
 Interactive UI: Add, remove, and store ingredients in local storage.
 
-Implementation
+### Implementation
 
-For Software:
+#### For Software:
 
 Installation:
 
@@ -67,9 +69,9 @@ Enter ingredients in the input box and click Add.
 Click Show Recipes to view recipe suggestions based on the added ingredients.
 Project Documentation
 
-Project Documentation
+### Project Documentation
 
-Screenshots:
+#### Screenshots:
 
 – Shows the ingredient input page with “Add” buttons.
 
@@ -77,13 +79,13 @@ Screenshots:
 
 – Recipe suggestions page after entering ingredients.
 
-Diagrams:
+#### Diagrams:
 
 System Architecture:
 
 User enters ingredients → Stored in browser localStorage → Sent to recipe suggestions page → Recipes filtered and displayed.
 
-Application Workflow:
+#### Application Workflow:
 
 User enters available ingredients, leftover items, or selects items from the student survival kit.
 
