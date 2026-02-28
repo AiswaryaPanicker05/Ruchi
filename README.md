@@ -8,7 +8,7 @@ Member 1: Aiswarya Panicker – Vidya Academy of Science & Technology
 
 Member 2: Aryanandha P P – Vidya Academy of Science & Technology
 
-Hosted Project Link: https://yourprojectlink.com
+Hosted Project Link: https://silver-souffle-12e0e6.netlify.app/home.html
 
 Project Description
 
