@@ -97,8 +97,20 @@ App retrieves recipes that match the selected ingredients, leftovers, or student
 
 Recipes are displayed dynamically for the user, highlighting options for quick meals, leftover utilization, and student-friendly recipes.
 
+
 Team Contributions
 
 Aiswarya Panicker: Frontend development, UI/UX
 
 Aryanandha P P : Recipe filtering logic, Testing
+
+### License
+
+This project is licensed under the [LICENSE_NAME] License - see the  for details.
+
+Common License Options:
+
+MIT License (Permissive, widely used)
+Apache 2.0 (Permissive with patent grant)
+GPL v3 (Copyleft, requires derivative works to be open source)
+
