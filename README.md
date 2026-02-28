@@ -106,7 +106,7 @@ Aryanandha P P : Recipe filtering logic, Testing
 
 ### License
 
-This project is licensed under the [LICENSE_NAME] License - see the  for details.
+This project is licensed under the [LICENSE_NAME] License - see the https://github.com/AiswaryaPanicker05/Ruchi/blob/main/LICENSE  for details.
 
 Common License Options:
 
