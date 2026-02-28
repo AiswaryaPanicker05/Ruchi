@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leftover Transformation</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9f9;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Input section */
+.input-section {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.input-section input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.input-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.input-section button:hover {
+    background: #45a049;
+}
+
+/* Recipe container */
+.recipe-container {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    height: 70vh;
+    padding-right: 5px;
+}
+
+/* Recipe card styling */
+.recipe-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.recipe-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.recipe-section h4 {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.recipe-section p {
+    margin: 3px 0 8px 0;
+    font-size: 14px;
+    color: #555;
+}
+</style>
+</head>
+<body>
+
+<h1>Leftover Transformation</h1>
+
+<div class="input-section">
+    <input type="text" id="leftoverInput" placeholder="Enter leftover items (e.g., rice, paneer)">
+    <button onclick="showRecipes()">Enter</button>
+</div>
+
+<div class="recipe-container" id="recipeContainer">
+    <!-- Recipes will appear here -->
+</div>
+
+<script>
+const recipes = [
+    {
+        title: "Vegetable Upma from Leftover Rice",
+        leftovers: ["rice", "cooked vegetables"],
+        transform: "Sauté leftover veggies in ½ tsp oil, add leftover rice, season with salt, chili, and lemon juice. Optional: sprinkle some roasted peanuts.",
+        calories: "~200 kcal",
+        protein: "~6 g",
+        carbs: "~35 g",
+        fats: "~5 g",
+        fiber: "~4 g",
+        meal: "Breakfast / Snack"
+    },
+    {
+        title: "Masala Sandwich from Roti & Veggies",
+        leftovers: ["roti", "chapati", "boiled vegetables"],
+        transform: "Mash leftover vegetables, mix with salt/chili, use as filling in roti, roll or toast in microwave.",
+        calories: "~220 kcal",
+        protein: "~6–7 g",
+        carbs: "~30 g",
+        fats: "~8 g",
+        fiber: "~4 g",
+        meal: "Snack / Lunch"
+    },
+    {
+        title: "Cheese / Paneer Wrap",
+        leftovers: ["paneer", "chapati", "leftover salad vegetables"],
+        transform: "Chop paneer and veggies, sprinkle salt and chili, roll in roti, microwave 30 sec for warm wrap.",
+        calories: "~220 kcal",
+        protein: "~12 g",
+        carbs: "~28 g",
+        fats: "~10 g",
+        fiber: "~3 g",
+        meal: "Snack / Lunch"
+    },
+    {
+        title: "Vegetable Poha / Upma Mix",
+        leftovers: ["poha", "upma", "vegetables"],
+        transform: "Microwave leftover poha/upma for 1–2 mins, sprinkle fresh lemon, coriander, or chutney.",
+        calories: "~180–200 kcal",
+        protein: "~5–6 g",
+        carbs: "~32 g",
+        fats: "~4 g",
+        fiber: "~3 g",
+        meal: "Breakfast / Snack"
+    },
+    {
+        title: "Curd Rice with Extras",
+        leftovers: ["rice", "curd"],
+        transform: "Add chopped leftover vegetables, a drizzle of tamarind/chutney, and roasted peanuts for crunch.",
+        calories: "~200 kcal",
+        protein: "~5 g",
+        carbs: "~36 g",
+        fats: "~5 g",
+        fiber: "~4 g",
+        meal: "Lunch / Dinner"
+    },
+    {
+        title: "Leftover Dosa / Idli Upma",
+        leftovers: ["dosa", "idli"],
+        transform: "Cut into small pieces, microwave with a little oil and onion/tomato, sprinkle turmeric/chili. Instant “upma” style dish.",
+        calories: "~180 kcal",
+        protein: "~4–5 g",
+        carbs: "~30 g",
+        fats: "~4 g",
+        fiber: "~3 g",
+        meal: "Breakfast / Snack"
+    },
+    {
+        title: "Chickpea & Rice Bowl",
+        leftovers: ["rice", "boiled chickpeas"],
+        transform: "Mix rice and chickpeas, add leftover vegetables, drizzle lemon or yogurt for taste.",
+        calories: "~220 kcal",
+        protein: "~9 g",
+        carbs: "~38 g",
+        fats: "~6 g",
+        fiber: "~5 g",
+        meal: "Lunch / Dinner"
+    },
+    {
+        title: "Vegetable Mug Pizza",
+        leftovers: ["bread", "roti", "leftover veggies", "paneer", "cheese"],
+        transform: "Place vegetables & cheese on bread/roti, microwave 1–2 mins. Optional: sprinkle chili, herbs.",
+        calories: "~200–250 kcal",
+        protein: "~7–10 g",
+        carbs: "~30–35 g",
+        fats: "~8–10 g",
+        fiber: "~3–4 g",
+        meal: "Snack / Dinner"
+    },
+    {
+        title: "Leftover Vegetable Paratha Filling",
+        leftovers: ["cooked vegetables"],
+        transform: "Mash veggies, season, stuff into chapati, toast lightly on microwave / pan if available.",
+        calories: "~220 kcal",
+        protein: "~6–7 g",
+        carbs: "~32 g",
+        fats: "~7 g",
+        fiber: "~4 g",
+        meal: "Lunch / Dinner"
+    }
+];
+
+function showRecipes() {
+    const container = document.getElementById('recipeContainer');
+    const input = document.getElementById('leftoverInput').value.trim().toLowerCase();
+
+    if (!input) {
+        alert("Please enter leftover items!");
+        return;
+    }
+
+    container.innerHTML = "";
+
+    // Filter recipes based on input
+    const filtered = recipes.filter(recipe => {
+        return recipe.leftovers.some(item => item.includes(input));
+    });
+
+    if (filtered.length === 0) {
+        container.innerHTML = `<p style="text-align:center; color:#888;">No recipes found for "${input}"</p>`;
+        return;
+    }
+
+    filtered.forEach(recipe => {
+        const card = document.createElement('div');
+        card.className = "recipe-card";
+        card.innerHTML = `
+            <div class="recipe-title">${recipe.title}</div>
+            <div class="recipe-section">
+                <h4>Leftovers:</h4>
+                <p>${recipe.leftovers.join(", ")}</p>
+            </div>
+            <div class="recipe-section">
+                <h4>Transformation:</h4>
+                <p>${recipe.transform}</p>
+            </div>
+            <div class="recipe-section">
+                <h4>Nutrition:</h4>
+                <p>Calories: ${recipe.calories}</p>
+                <p>Protein: ${recipe.protein}</p>
+                <p>Carbs: ${recipe.carbs}</p>
+                <p>Fats: ${recipe.fats}</p>
+                <p>Fiber: ${recipe.fiber}</p>
+            </div>
+            <div class="recipe-section">
+                <h4>Meal Type:</h4>
+                <p>${recipe.meal}</p>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+</script>
+
+</body>
+</html>

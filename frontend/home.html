@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruchi Home</title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<div class="content">
+    <h1>Welcome, Ruchi!</h1>
+    <p>Create delicious recipes using what you have at home.</p>
+
+    <div class="feature-cards">
+        <!-- Ingredients Card -->
+        <div class="feature-card">
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=400&q=80" alt="Ingredients">
+    <p>Ingredients</p>
+    <a href="ingredient.html">
+        <button>Go</button>
+    </a>
+</div>
+
+        <!-- Student Survival Kit Card -->
+        <div class="feature-card">
+    <img src="https://www.nichd.nih.gov/sites/default/files/2022-08/DIR-august2022-showcase-image2-400px.jpg" alt="Student Kit">
+    <p>Student Kit</p>
+    <a href="student.html">
+        <button>Go</button>
+    </a>
+</div>
+        <!-- Leftovers Card -->
+        <div class="feature-card">
+    <img src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/06/leftovers-1296x728-header.jpg?w=1155&h=1528" alt="Leftovers">
+    <p>Leftovers</p>
+    <a href="left.html">
+        <button>Go</button>
+    </a>
+</div>
+
+        <!-- Favourite Card -->
+        <div class="feature-card">
+            <img src="https://cdn.thememylogin.com/uploads/edd/2019/03/favorites.png" alt="Favourite Recipes">
+            <p>Favourite</p>
+            <button onclick="location.href='favourite.html'">Go</button>
+        </div>
+
+        <!-- Profile Card -->
+        <div class="feature-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile">
+            <p>Profile</p>
+            <button onclick="openProfile()">Go</button>
+        </div>
+    </div>
+</div>
+
+<!-- Side Profile Panel -->
+<div class="profile-panel" id="profilePanel">
+    <div class="close-btn" onclick="closeProfile()">✖</div>
+    <div class="profile-img"></div>
+    <div class="profile-details">
+        <h3 id="showUsername">User</h3>
+        <p id="showEmail">email@example.com</p>
+    </div>
+</div>
+
+<script src="home.js"></script>
+
+</body>
+</html>

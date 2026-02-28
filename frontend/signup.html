@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>രുചി</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#fff5e6,#ffd8b5);
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:30px;
+    background:rgba(255,255,255,0.6);
+    animation:slideDown 0.6s ease-out;
+}
+
+.header h1{
+    font-size:48px;
+    color:#b34747;
+    margin:0;
+    animation:fadeIn 0.8s ease-out;
+}
+
+.header p{
+    font-size:18px;
+    color:#555;
+    animation:fadeIn 0.8s ease-out 0.2s both;
+}
+
+/* CARD SECTION */
+.container{
+    display:flex;
+    justify-content:center;
+    padding:40px 20px;
+}
+
+.card{
+    background:#fff;
+    padding:30px;
+    width:350px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.12);
+    animation:slideUp 0.6s ease-out 0.3s both;
+}
+
+.card h2{
+    text-align:center;
+    color:#333;
+    animation:fadeInDown 0.7s ease-out 0.4s both;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+    transition:all 0.3s ease;
+}
+
+input:focus{
+    outline:none;
+    border-color:#ff6f61;
+    box-shadow:0 0 8px rgba(255,111,97,0.3);
+    transform:scale(1.01);
+}
+
+button{
+    width:100%;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#ff6f61;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    animation:fadeInUp 0.6s ease-out 0.5s both;
+}
+
+button:hover{
+    background:#e85d50;
+    transform:translateY(-2px);
+    box-shadow:0 8px 16px rgba(255,111,97,0.3);
+}
+
+button:active{
+    transform:translateY(0);
+}
+
+.switch{
+    text-align:center;
+    margin-top:10px;
+    color:#555;
+    cursor:pointer;
+    transition:all 0.3s ease;
+    animation:fadeIn 0.8s ease-out 0.6s both;
+}
+
+.switch:hover{
+    color:#b34747;
+    text-decoration:underline;
+}
+
+.message{
+    text-align:center;
+    margin-top:15px;
+    padding:10px;
+    border-radius:8px;
+    display:none;
+    font-weight:bold;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(255,255,255,0.6);
+    margin-top:30px;
+    animation:fadeIn 0.8s ease-out 0.7s both;
+}
+
+@keyframes slideDown{
+    from{opacity:0;transform:translateY(-20px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes slideUp{
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeInDown{
+    from{opacity:0;transform:translateY(-10px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeInUp{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>രുചി</h1>
+    <p>Delicious recipes using pantry ingredients</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h2>Create Account</h2>
+
+        <form id="signupForm">
+          <input id="username" type="text" placeholder="Username" required>
+          <input id="email" type="email" placeholder="Email" required>
+          <input id="password" type="password" placeholder="Password" required>
+          <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="message" id="msgBox"></div>
+
+        <div class="switch" id="loginSwitch">Already have an account? Login</div>
+    </div>
+</div>
+
+<div class="footer">
+    © 2026 രുചി | Made with ❤️ for Home Makers
+</div>
+
+<script>
+(function(){
+    const form = document.getElementById('signupForm');
+    const loginSwitch = document.getElementById('loginSwitch');
+    const msgBox = document.getElementById('msgBox');
+
+    // Switch to login page
+    loginSwitch.addEventListener('click', ()=>{
+        window.location.href = 'login.html';
+    });
+
+    // Signup functionality without backend
+    form.addEventListener('submit', ev=>{
+        ev.preventDefault();
+
+        const username = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value;
+
+        if(!username || !email || !password){
+            msgBox.style.display = 'block';
+            msgBox.style.backgroundColor = '#f8d7da';
+            msgBox.style.color = '#721c24';
+            msgBox.style.border = '1px solid #f5c6cb';
+            msgBox.innerText = 'Please fill all fields';
+            return;
+        }
+
+        // Save to localStorage
+        localStorage.setItem('username', username);
+        localStorage.setItem('email', email);
+
+        msgBox.style.display = 'block';
+        msgBox.innerText = 'Signup successful! Redirecting...';
+        msgBox.style.backgroundColor = '#d4edda';
+        msgBox.style.color = '#155724';
+        msgBox.style.border = '1px solid #c3e6cb';
+
+        // Redirect after 1.5 seconds
+        setTimeout(()=>{
+            window.location.href = 'home.html';
+        },1500);
+    });
+})();
+</script>
+
+</body>
+</html>

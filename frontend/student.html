@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Survival Kit</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fdf6f0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Scrollable container */
+.recipe-container {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    height: 80vh;
+    padding-right: 5px;
+}
+
+/* Recipe card styling */
+.recipe-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.recipe-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.recipe-section h4 {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.recipe-section p {
+    margin: 3px 0 8px 0;
+    font-size: 14px;
+    color: #555;
+}
+</style>
+</head>
+<body>
+
+<h1>Student Survival Kit</h1>
+
+<div class="recipe-container">
+
+    <!-- Recipe 1: Corn Chaat -->
+    <div class="recipe-card">
+        <div class="recipe-title">Corn Chaat</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>1 cup boiled corn, 1 small onion (chopped), 1 small tomato (chopped), lemon juice, chaat masala to taste</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Time:</h4>
+            <p>5 mins</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Nutrition:</h4>
+            <p>Calories: ~120 kcal</p>
+            <p>Protein: ~5 g</p>
+            <p>Carbs: ~25 g</p>
+            <p>Fats: ~2 g</p>
+            <p>Fiber: ~3 g</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Meal Type:</h4>
+            <p>Snack / Evening</p>
+        </div>
+    </div>
+
+    <!-- Recipe 2: Quick Peanut Butter Sandwich -->
+    <div class="recipe-card">
+        <div class="recipe-title">Quick Peanut Butter Sandwich</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>2 slices bread, 1 tbsp peanut butter, a pinch of chili powder (optional)</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Time:</h4>
+            <p>3-4 mins</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Nutrition:</h4>
+            <p>Calories: ~210 kcal</p>
+            <p>Protein: ~7 g</p>
+            <p>Carbs: ~25 g</p>
+            <p>Fats: ~10 g</p>
+            <p>Fiber: ~3 g</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Meal Type:</h4>
+            <p>Snack / Breakfast</p>
+        </div>
+    </div>
+
+    <!-- Recipe 3: Instant Oats Overnight / Cold Oats -->
+    <div class="recipe-card">
+        <div class="recipe-title">Instant Oats Overnight / Cold Oats</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>½ cup oats, ½ cup milk or curd, fruits (banana/apple), honey</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Steps:</h4>
+            <p>Mix all ingredients and soak for 5–10 mins (or overnight in fridge if available)</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Nutrition:</h4>
+            <p>Calories: ~180 kcal</p>
+            <p>Protein: ~6 g</p>
+            <p>Carbs: ~30 g</p>
+            <p>Fats: ~4 g</p>
+            <p>Fiber: ~5 g</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Meal Type:</h4>
+            <p>Breakfast / Snack</p>
+        </div>
+    </div>
+
+    <!-- You can add more recipes below similarly -->
+
+</div>
+</body>
+</html>

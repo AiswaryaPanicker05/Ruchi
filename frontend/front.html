@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ruchi</title>
+    <meta charset="UTF-8">
+
+    <!-- Malayalam Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff6f61 0%, #ff8a80 50%, #ff9999 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        /* Animated background circles */
+        body::before,
+        body::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        body::before {
+            background: white;
+            top: -100px;
+            left: -100px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        body::after {
+            background: white;
+            bottom: -100px;
+            right: -100px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        h1 {
+            color: white;
+            font-size: 100px;
+            font-weight: bold;
+            font-family: 'Noto Serif Malayalam', serif;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: slideInDown 0.8s ease-out, pulse 2s ease-in-out 0.8s infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .swipe {
+            position: absolute;
+            bottom: 30px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            animation: bounce 2s infinite, fadeIn 0.8s ease-out 0.3s both;
+            z-index: 1;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .swipe:hover {
+            animation: bounce 1.2s infinite, rotate-arrow 0.6s ease-in-out;
+        }
+
+        @keyframes rotate-arrow {
+            0%, 100% { transform: rotate(0deg) translateY(0); }
+            50% { transform: rotate(5deg) translateY(-10px); }
+        }
+
+        /* Decorative elements */
+        .deco {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float-particle 15s infinite ease-in-out;
+        }
+
+        .deco:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .deco:nth-child(2) { top: 30%; right: 15%; animation-delay: 2s; }
+        .deco:nth-child(3) { bottom: 25%; left: 5%; animation-delay: 4s; }
+
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+            25% { transform: translateY(-20px) translateX(10px); opacity: 0.6; }
+            50% { transform: translateY(-40px) translateX(-10px); opacity: 1; }
+            75% { transform: translateY(-20px) translateX(10px); opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>രുചി</h1>
+
+    <a href="signup.html" class="swipe">
+    Swipe Up ⬆
+</a>
+
+</body>
+</html>

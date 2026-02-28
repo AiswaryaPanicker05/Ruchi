@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Available Ingredients</title>
+
+  <style>
+    body{
+      font-family:Segoe UI,Helvetica,Arial,sans-serif;
+      margin:0;
+      background:linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.85)),url('https://images.unsplash.com/photo-1495521821757-a1efb6729352?auto=format&fit=crop&w=1200') center/cover no-repeat fixed;
+      color:#333;
+      min-height:100vh
+    }
+
+    .container{
+      max-width:600px;
+      margin:50px auto;
+      padding:30px 20px;
+      background:rgba(255,255,255,0.95);
+      border-radius:12px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.1)
+    }
+
+    h1{
+      text-align:center;
+      color:#b34747;
+      animation:fadeInDown 0.7s ease-out;
+    }
+
+    @keyframes fadeInDown{
+      from{opacity:0;transform:translateY(-10px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    .form-group{
+      display:flex;
+      gap:8px;
+      margin-bottom:20px;
+      animation:slideUp 0.6s ease-out 0.2s both;
+    }
+
+    @keyframes slideUp{
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    input[type=text]{
+      flex:1;
+      padding:10px;
+      border:1px solid #ccc;
+      border-radius:6px;
+      transition:all 0.3s ease;
+    }
+
+    input[type=text]:focus{
+      outline:none;
+      border-color:#ff6f61;
+      box-shadow:0 0 8px rgba(255,111,97,0.3);
+      transform:scale(1.02);
+    }
+
+    button.add{
+      padding:10px 16px;
+      background:#ff6f61;
+      border:none;
+      color:#fff;
+      border-radius:6px;
+      cursor:pointer;
+      transition:all 0.3s ease;
+    }
+
+    button.add:hover{
+      background:#e85d50;
+      transform:translateY(-2px);
+      box-shadow:0 4px 12px rgba(255,111,97,0.3);
+    }
+
+    .list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+      animation:fadeIn 0.6s ease-out 0.3s both;
+    }
+
+    @keyframes fadeIn{
+      from{opacity:0}
+      to{opacity:1}
+    }
+
+    .item-btn{
+      background:#ffe0d1;
+      border:1px solid #ffb0a8;
+      border-radius:20px;
+      padding:8px 14px;
+      cursor:pointer;
+      position:relative;
+      font-weight:bold;
+      transition:all 0.3s ease;
+      animation:popIn 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+    }
+
+    @keyframes popIn{
+      from{opacity:0;transform:scale(0.8)}
+      to{opacity:1;transform:scale(1)}
+    }
+
+    .item-btn:hover{
+      background:#ffccba;
+      transform:scale(1.08) rotate(2deg);
+      box-shadow:0 4px 12px rgba(255,111,97,0.2);
+    }
+
+    .item-btn .remove{
+      position:absolute;
+      top:-4px;
+      right:-4px;
+      background:#b34747;
+      color:#fff;
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      font-size:12px;
+      line-height:18px;
+      text-align:center;
+      cursor:pointer
+    }
+
+    /* Recipe link button */
+    a.recipe-btn{
+      display:block;
+      text-align:center;
+      margin:30px auto 0;
+      padding:12px 20px;
+      font-size:16px;
+      background:#ff6f61;
+      color:white;
+      border:none;
+      border-radius:8px;
+      text-decoration:none;
+      cursor:pointer;
+      transition:all 0.3s ease;
+    }
+
+    a.recipe-btn:hover{
+      background:#e85d50;
+      transform:translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Enter Available Ingredients</h1>
+
+    <div class="form-group">
+      <input id="ingredientInput" type="text" placeholder="Type an ingredient and press Add" />
+      <button class="add" id="addBtn">Add</button>
+    </div>
+
+    <div class="list" id="ingredientList"></div>
+
+    <!-- Recipe link button -->
+    <a href="default.html" class="recipe-btn" id="goRecipes">Show Recipes</a>
+  </div>
+
+  <script>
+    (function(){
+      const input = document.getElementById('ingredientInput');
+      const addBtn = document.getElementById('addBtn');
+      const list = document.getElementById('ingredientList');
+      const goRecipes = document.getElementById('goRecipes');
+      const items = new Set();
+
+      function createItem(name){
+        const btn = document.createElement('div');
+        btn.className = 'item-btn';
+        btn.textContent = name;
+        btn.dataset.name = name;
+
+        const rem = document.createElement('span');
+        rem.className = 'remove';
+        rem.textContent = '×';
+        rem.addEventListener('click', ()=>{
+          items.delete(name.toLowerCase());
+          list.removeChild(btn);
+        });
+
+        btn.appendChild(rem);
+        return btn;
+      }
+
+      function addIngredient(name){
+        if(items.has(name.toLowerCase())) return; // ignore duplicates
+        items.add(name.toLowerCase());
+        list.appendChild(createItem(name));
+        saveItems();
+      }
+
+      addBtn.addEventListener('click', ()=>{
+        const val = input.value.trim();
+        if(!val) return;
+        addIngredient(val);
+        input.value='';
+        input.focus();
+      });
+
+      input.addEventListener('keyup', e=>{
+        if(e.key==='Enter') addBtn.click();
+      });
+
+      function saveItems(){
+        localStorage.setItem('ingredients', JSON.stringify(Array.from(items)));
+        // update the href link with query param
+        goRecipes.href = `default.html?ingredients=${encodeURIComponent(JSON.stringify(Array.from(items)))}`;
+      }
+
+      function loadItems(){
+        try{
+          const stored = localStorage.getItem('ingredients');
+          if(stored){
+            JSON.parse(stored).forEach(i=> addIngredient(i));
+          }
+        }catch(err){console.warn('failed load',err);}
+        // update link initially
+        goRecipes.href = `default.html?ingredients=${encodeURIComponent(JSON.stringify(Array.from(items)))}`;
+      }
+
+      loadItems();
+    })();
+  </script>
+</body>
+</html>

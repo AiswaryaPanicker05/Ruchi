@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruchi Recipes</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fdf6f0;
+    padding: 20px;
+}
+
+/* Container for all recipes */
+.recipe-container {
+    display: flex;
+    flex-direction: column; /* vertical stack */
+    gap: 30px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Individual recipe card */
+.recipe-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+/* Image */
+.recipe-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Recipe content */
+.recipe-content {
+    padding: 20px;
+}
+
+.recipe-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.recipe-rating {
+    color: #ffcc00;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.recipe-section {
+    margin-bottom: 10px;
+}
+
+.recipe-section h4 {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.recipe-section p {
+    margin: 3px 0 8px 0;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #555;
+}
+</style>
+</head>
+<body>
+
+<h1 style="text-align:center; margin-bottom:30px;">Ruchi Recipes</h1>
+
+<div class="recipe-container">
+<!-- Recipe 1 -->
+<div class="recipe-card">
+    <img src="https://www.tamarindnthyme.com/wp-content/uploads/2020/10/Spicy-Masala-Omelette.jpg" alt="Masala Omelette">
+    <div class="recipe-content">
+        <div class="recipe-title">1. Masala Omelette</div>
+        <div class="recipe-rating">⭐⭐⭐⭐☆</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>2 eggs, 1 small onion (chopped), 1 small tomato (chopped), green chili (optional), salt & pepper, 1 tsp oil</p>               
+        </div>
+        <div class="recipe-section">
+            <h4>Steps:</h4>
+            <p>Beat eggs with salt and pepper.<br>
+            Add chopped onion, tomato, and chili.<br>
+            Heat oil in a pan, pour the mixture, cook both sides till golden.</p>
+        </div>
+        <div class="recipe-section">
+            <p><strong>Time:</strong> 5–7 mins | <strong>Servings:</strong> 1 | <strong>Meal Type:</strong> Breakfast / Snack</p>
+        </div>
+
+        <!-- Button for navigation only -->
+        <div class="recipe-section">
+            <a href="recipe1.html">
+                <button>View Details</button>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Recipe 2 -->
+<div class="recipe-card">
+    <img src="https://www.wholesomeyum.com/wp-content/uploads/2024/02/wholesomeyum-Stir-Fry-Vegetables-27.jpg" alt="Quick Vegetable Stir-Fry">
+    <div class="recipe-content">
+        <div class="recipe-title">2. Quick Vegetable Stir-Fry</div>
+        <div class="recipe-rating">⭐⭐⭐⭐⭐</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>1 cup mixed vegetables (carrot, beans, capsicum), 1 tsp oil, ½ tsp soy sauce, salt to taste</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Steps:</h4>
+            <p>Heat oil in a pan.<br>
+            Add vegetables, sauté for 3–4 mins.<br>
+            Add soy sauce and salt, cook 1–2 mins more.</p>
+        </div>
+        <div class="recipe-section">
+            <p><strong>Time:</strong> 7 mins | <strong>Servings:</strong> 1–2 | <strong>Meal Type:</strong> Lunch / Dinner</p>
+        </div>
+
+        <!-- Button for navigation only -->
+        <div class="recipe-section">
+            <a href="recipe2.html">
+                <button>View Details</button>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Recipe 3 -->
+<div class="recipe-card">
+    <img src="https://www.fyp365.com/wp-content/uploads/2018/11/Peanut-Butter-Power-Toast-1200x500.jpg" alt="Banana Peanut Butter Toast">
+    <div class="recipe-content">
+        <div class="recipe-title">3. Banana Peanut Butter Toast</div>
+        <div class="recipe-rating">⭐⭐⭐⭐⭐</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>1 slice bread, 1 tbsp peanut butter, ½ banana sliced</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Steps:</h4>
+            <p>Toast bread lightly.<br>
+            Spread peanut butter.<br>
+            Top with banana slices.</p>
+        </div>
+        <div class="recipe-section">
+            <p><strong>Time:</strong> 3–4 mins | <strong>Servings:</strong> 1 | <strong>Meal Type:</strong> Breakfast / Snack</p>
+        </div>
+        <div class="recipe-section">
+            <a href="recipe3.html">
+                <button>View Details</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Recipe 4 -->
+<div class="recipe-card">
+    <img src="https://beextravegant.com/wp-content/uploads/2022/05/Untitled.png" alt="Vegetable Upma">
+    <div class="recipe-content">
+        <div class="recipe-title">4. Vegetable Upma</div>
+        <div class="recipe-rating">⭐⭐⭐⭐☆</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>½ cup semolina, 1 cup chopped veggies (carrot, beans), 1 tsp oil, ½ tsp mustard seeds, salt to taste, 1–2 cups water</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Steps:</h4>
+            <p>Roast semolina lightly, set aside.<br>
+            Heat oil, add mustard seeds and veggies, sauté 2–3 mins.<br>
+            Add water and salt, bring to boil.<br>
+            Add semolina gradually, stir till thick.</p>
+        </div>
+        <div class="recipe-section">
+            <p><strong>Time:</strong> 10 mins | <strong>Servings:</strong> 1–2 | <strong>Meal Type:</strong> Breakfast</p>
+        </div>
+        <div class="recipe-section">
+            <a href="recipe4.html">
+                <button>View Details</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Recipe 5 -->
+<div class="recipe-card">
+    <img src="https://colorfulsuperfoodie.com/wp-content/uploads/2024/06/066A9086.jpg" alt="Fruit Yogurt Bowl">
+    <div class="recipe-content">
+        <div class="recipe-title">5. Fruit Yogurt Bowl</div>
+        <div class="recipe-rating">⭐⭐⭐⭐⭐</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>½ cup yogurt, ½ cup mixed fruits (apple, banana, berries), 1 tsp honey</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Steps:</h4>
+            <p>Mix yogurt and honey.<br>
+            Add chopped fruits on top.</p>
+        </div>
+        <div class="recipe-section">
+            <p><strong>Time:</strong> 2 mins | <strong>Servings:</strong> 1 | <strong>Meal Type:</strong> Snack / Breakfast</p>
+        </div>
+        <div class="recipe-section">
+            <a href="recipe5.html">
+                <button>View Details</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Recipe 6 -->
+<div class="recipe-card">
+    <img src="https://foodal.com/wp-content/uploads/2021/03/6-Minute-Chocolate-Microwave-Mug-Cake.jpg" alt="Microwave Mug Cake">
+    <div class="recipe-content">
+        <div class="recipe-title">6. Microwave Mug Cake</div>
+        <div class="recipe-rating">⭐⭐⭐⭐⭐</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>4 tbsp flour, 2 tbsp sugar, 2 tbsp milk, 1 tbsp oil, ½ tsp baking powder, cocoa powder (optional)</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Steps:</h4>
+            <p>Mix all ingredients in a microwave-safe mug.<br>
+            Microwave 1–2 mins till cooked.</p>
+        </div>
+        <div class="recipe-section">
+            <p><strong>Time:</strong> 5 mins | <strong>Servings:</strong> 1 | <strong>Meal Type:</strong> Dessert / Snack</p>
+        </div>
+        <div class="recipe-section">
+            <a href="recipe6.html">
+                <button>View Details</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Recipe 7 -->
+<div class="recipe-card">
+    <img src="https://www.cookclickndevour.com/wp-content/uploads/2020/07/chickpea-salad-recipe.jpg" alt="Chickpea Salad">
+    <div class="recipe-content">
+        <div class="recipe-title">7. Chickpea Salad</div>
+        <div class="recipe-rating">⭐⭐⭐⭐⭐</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>½ cup boiled chickpeas, 1 small tomato, ½ cucumber, 1 tsp lemon juice, salt & pepper</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Steps:</h4>
+            <p>Chop tomato and cucumber.<br>
+            Mix with chickpeas, lemon juice, salt, and pepper.</p>
+        </div>
+        <div class="recipe-section">
+            <p><strong>Time:</strong> 5 mins | <strong>Servings:</strong> 1 | <strong>Meal Type:</strong> Lunch / Snack</p>
+        </div>
+        <div class="recipe-section">
+            <a href="recipe7.html">
+                <button>View Details</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Recipe 8 -->
+<div class="recipe-card">
+    <img src="https://mani-life.com/cdn/shop/articles/Untitled_design-21_50c9e253-4da5-4e99-a0e8-ef50d58d2093.png?v=1742999517" alt="Masala Peanut Butter Sandwich">
+    <div class="recipe-content">
+        <div class="recipe-title">8. Masala Peanut Butter Sandwich</div>
+        <div class="recipe-rating">⭐⭐⭐⭐⭐</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>2 slices bread, 1 tbsp peanut butter, ¼ tsp chili powder, salt to taste, chopped cucumber/tomato</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Steps:</h4>
+            <p>Spread peanut butter on bread.<br>
+            Sprinkle chili powder, add veggies, cover with other slice.</p>
+        </div>
+        <div class="recipe-section">
+            <p><strong>Time:</strong> 3–4 mins | <strong>Servings:</strong> 1 | <strong>Meal Type:</strong> Snack / Breakfast</p>
+        </div>
+        <div class="recipe-section">
+            <a href="recipe8.html">
+                <button>View Details</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Recipe 9 -->
+<div class="recipe-card">
+    <img src="https://rakskitchen.net/wp-content/uploads/2021/09/idiyappam-nool-puttu-500x375.jpg" alt="Idiyappam with Coconut Milk">
+    <div class="recipe-content">
+        <div class="recipe-title">9. Idiyappam with Coconut Milk</div>
+        <div class="recipe-rating">⭐⭐⭐⭐⭐</div>
+        <div class="recipe-section">
+            <h4>Ingredients:</h4>
+            <p>Idiyappam (store-bought or fresh), ½ cup coconut milk, ½ tsp sugar, pinch of salt</p>
+        </div>
+        <div class="recipe-section">
+            <h4>Steps:</h4>
+            <p>Steam idiyappam for 2–3 mins.<br>
+            Mix coconut milk with sugar and salt.<br>
+            Pour over idiyappam and serve.</p>
+        </div>
+        <div class="recipe-section">
+            <p><strong>Time:</strong> 5–7 mins | <strong>Servings:</strong> 1–2 | <strong>Meal Type:</strong> Breakfast / Snack</p>
+        </div>
+        <div class="recipe-section">
+            <a href="recipe9.html">
+                <button>View Details</button>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
