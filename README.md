@@ -10,7 +10,7 @@ Member 1: Aiswarya Panicker – Vidya Academy of Science & Technology,thrissur
 
 Member 2: Aryanandha P P – Vidya Academy of Science & Technology,thrissur
 
-### Hosted Project Link: https://silver-souffle-12e0e6.netlify.app/home.html
+### Hosted Project Link: https://silver-souffle-12e0e6.netlify.app/
 
 ### Project Description
 
