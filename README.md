@@ -73,17 +73,17 @@ Project Documentation
 
 #### Screenshots:
 
-– https://drive.google.com/drive/folders/1qPsUYMP0P6gevOKYMIxEl0SZhieO2qRk - 
+– https://drive.google.com/drive/folders/1qPsUYMP0P6gevOKYMIxEl0SZhieO2qRk 
 
-– https://drive.google.com/drive/folders/1fP1YDVzWm6NNpZf0X95bBKMtq47kFBBb -
+– https://drive.google.com/drive/folders/1fP1YDVzWm6NNpZf0X95bBKMtq47kFBBb 
 
-– https://drive.google.com/drive/folders/1GvuZ-En78G8wHW-ZkfNyCnwyV4uhA05Y - 
+– https://drive.google.com/drive/folders/1GvuZ-En78G8wHW-ZkfNyCnwyV4uhA05Y 
 
 #### Diagrams:
 
 System Architecture:
 
-
+https://drive.google.com/drive/folders/1NzQ9-j96X7CmiO6HG2e4pHFMV4bhfgOy
 
 #### Application Workflow:
 
