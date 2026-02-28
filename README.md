@@ -73,17 +73,17 @@ Project Documentation
 
 #### Screenshots:
 
-– Shows the ingredient input page with “Add” buttons.
+– https://drive.google.com/drive/folders/1qPsUYMP0P6gevOKYMIxEl0SZhieO2qRk - 
 
-– Displays added ingredients list.
+– https://drive.google.com/drive/folders/1fP1YDVzWm6NNpZf0X95bBKMtq47kFBBb -
 
-– Recipe suggestions page after entering ingredients.
+– https://drive.google.com/drive/folders/1GvuZ-En78G8wHW-ZkfNyCnwyV4uhA05Y - 
 
 #### Diagrams:
 
 System Architecture:
 
-User enters ingredients → Stored in browser localStorage → Sent to recipe suggestions page → Recipes filtered and displayed.
+
 
 #### Application Workflow:
 
