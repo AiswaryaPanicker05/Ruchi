@@ -67,7 +67,7 @@ Open index.html in a web browser.
 Enter ingredients in the input box and click Add.
 
 Click Show Recipes to view recipe suggestions based on the added ingredients.
-Project Documentation
+
 
 ### Project Documentation
 
